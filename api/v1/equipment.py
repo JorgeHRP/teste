@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Header
 from typing import Optional
 
-from app.models.equipment import EquipmentModel, EquipmentListResponse
-from app.adapters.equipment_adapter import to_list_item
-from app.services import orchestrator, machines_db
-from app.core.security import get_current_user
-from app.core.logging import get_logger
+from models.equipment import EquipmentModel, EquipmentListResponse
+from adapters.equipment_adapter import to_list_item
+from services import orchestrator, machines_db
+from core.security import get_current_user
+from core.logging import get_logger
 
 logger = get_logger(__name__)
 router = APIRouter(prefix="/equipment", tags=["Equipment"])

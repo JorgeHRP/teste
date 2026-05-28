@@ -3,9 +3,9 @@ import httpx
 from base64 import b64encode
 from typing import Any
 
-from app.core.config import get_settings
-from app.core.logging import get_logger
-from app.core.exceptions import ExternalAPIError, AuthenticationError
+from core.config import get_settings
+from core.logging import get_logger
+from core.exceptions import ExternalAPIError, AuthenticationError
 
 logger = get_logger(__name__)
 settings = get_settings()

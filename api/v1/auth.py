@@ -2,9 +2,9 @@ import bcrypt
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
 
-from app.core.security import create_token, get_current_user
-from app.db.supabase import get_supabase
-from app.core.logging import get_logger
+from core.security import create_token, get_current_user
+from db.supabase import get_supabase
+from core.logging import get_logger
 
 logger = get_logger(__name__)
 router = APIRouter(prefix="/auth", tags=["Auth"])

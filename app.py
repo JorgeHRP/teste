@@ -2,15 +2,15 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.core.config import get_settings
-from app.core.logging import get_logger
-from app.core.exceptions import (
+from core.config import get_settings
+from core.logging import get_logger
+from core.exceptions import (
     ExternalAPIError,
     EquipmentNotFoundError,
     AuthenticationError,
     UnsupportedBrandError,
 )
-from app.api.v1 import equipment, clients, auth_johndeere, auth
+from api.v1 import equipment, clients, auth_johndeere, auth
 
 settings = get_settings()
 logger = get_logger(__name__)
@@ -75,4 +75,4 @@ async def root():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app.main:app", host="0.0.0.0", port=settings.APP_PORT, reload=True)
+    uvicorn.run("app:app", host="0.0.0.0", port=settings.APP_PORT, reload=True)

@@ -6,14 +6,14 @@ que a app mobile espera. É aqui que vive toda a lógica de mapeamento.
 from datetime import datetime, timezone
 from typing import Any
 
-from app.models.equipment import (
+from models.equipment import (
     EquipmentModel,
     EquipmentListItem,
     EquipmentStatus,
     AlertInfo,
     ErrorCode,
 )
-from app.core.logging import get_logger
+from core.logging import get_logger
 
 logger = get_logger(__name__)
 

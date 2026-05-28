@@ -4,12 +4,12 @@ Ponto central que, dado um registo da BD, sabe qual API chamar,
 busca os dados e usa o adapter para normalizar.
 """
 import asyncio
-from app.services import machines_db, hitachi, trackunit, johndeere
-from app.adapters import equipment_adapter as adapter
-from app.models.equipment import EquipmentModel
-from app.db.cache import cache_get, cache_set
-from app.core.logging import get_logger
-from app.core.exceptions import UnsupportedBrandError
+from services import machines_db, hitachi, trackunit, johndeere
+from adapters import equipment_adapter as adapter
+from models.equipment import EquipmentModel
+from db.cache import cache_get, cache_set
+from core.logging import get_logger
+from core.exceptions import UnsupportedBrandError
 
 logger = get_logger(__name__)
 

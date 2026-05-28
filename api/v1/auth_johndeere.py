@@ -3,8 +3,8 @@ from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 import secrets
 
-from app.services import johndeere, orchestrator
-from app.core.logging import get_logger
+from services import johndeere, orchestrator
+from core.logging import get_logger
 
 logger = get_logger(__name__)
 router = APIRouter(prefix="/auth/johndeere", tags=["Auth — John Deere"])
