@@ -1,0 +1,74 @@
+# ── Credenciais e segredos ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Documentação local (não vai para o repo) ──────────────────────────────────
+*.md
+!README.md
+
+# ── Claude Code ───────────────────────────────────────────────────────────────
+CLAUDE.md
+.claude/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pycache
+.Python
+
+# ── Ambientes virtuais ────────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ── Build / distribuição ──────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+wheels/
+.eggs/
+MANIFEST
+
+# ── Testes e cobertura ────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ── Type checkers e linters ───────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+.ruff_cache/
+.pytype/
+
+# ── IDEs e editores ───────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Dados e uploads ───────────────────────────────────────────────────────────
+data/
+uploads/
+*.csv
+*.xlsx
+*.xls
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Postman / testes externos ─────────────────────────────────────────────────
+*.postman_collection.json
+*.postman_environment.json
