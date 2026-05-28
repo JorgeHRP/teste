@@ -69,7 +69,7 @@ def from_hitachi(machine_db: dict, location: dict, daily: dict) -> EquipmentMode
     has_telemetry = bool(location or daily)
 
     brand = machine_db.get("marca", "HITACHI")
-    model = location.get("model_name") or machine_db.get("modelo") or machine_db.get("designacao", "")
+    model = location.get("model_name") or machine_db.get("modelo") or machine_db.get("designacao") or ""
     serial = location.get("pin_no") or daily.get("pin_no") or machine_db.get("chassis", "")
 
     # Horas totais acumuladas (body_hour_meter em horas)
@@ -140,7 +140,7 @@ def from_trackunit(
 ) -> EquipmentModel:
     """Constrói EquipmentModel a partir de dados Trackunit + registo da BD."""
     brand = asset.get("brand") or machine_db.get("marca", "")
-    model = asset.get("model") or machine_db.get("modelo") or machine_db.get("designacao", "")
+    model = asset.get("model") or machine_db.get("modelo") or machine_db.get("designacao") or ""
     serial = asset.get("serialNumber") or machine_db.get("chassis", "")
 
     # Localização — GeoJSON usa [longitude, latitude]!
@@ -231,7 +231,7 @@ def from_johndeere(
 ) -> EquipmentModel:
     """Constrói EquipmentModel a partir de dados John Deere + registo da BD."""
     brand = "John Deere"
-    model = equipment.get("model") or machine_db.get("modelo") or machine_db.get("designacao", "")
+    model = equipment.get("model") or machine_db.get("modelo") or machine_db.get("designacao") or ""
     serial = equipment.get("serialNumber") or machine_db.get("chassis", "")
 
     # Horas
@@ -318,7 +318,7 @@ def from_johndeere(
 def from_db_only(machine_db: dict) -> EquipmentModel:
     """Máquina sem telemetria disponível — dados mínimos da BD."""
     brand = machine_db.get("marca", "")
-    model = machine_db.get("modelo") or machine_db.get("designacao", "")
+    model = machine_db.get("modelo") or machine_db.get("designacao") or ""
     return EquipmentModel(
         id=machine_db.get("num_maquina", machine_db.get("chassis", "")),
         brand=brand,
